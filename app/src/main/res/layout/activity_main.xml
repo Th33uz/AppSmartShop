@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161925"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/TvIcone"
+        android:layout_width="280dp"
+        android:layout_height="120dp"
+        android:src="@drawable/icon2"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="Acesse sua conta"
+        android:fontFamily="@font/montserratalternates"
+        android:backgroundTint="#9956F6"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvIcone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
