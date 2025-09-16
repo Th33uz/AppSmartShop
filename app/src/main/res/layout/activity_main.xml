@@ -12,7 +12,7 @@
         android:id="@+id/TvIcone"
         android:layout_width="280dp"
         android:layout_height="120dp"
-        android:src="@drawable/icon2"
+        android:src="@drawable/iconapp"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
