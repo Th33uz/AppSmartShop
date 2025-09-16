@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161925"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/RegisterLogo"
+        android:layout_width="280dp"
+        android:layout_height="120dp"
+        android:src="@drawable/iconapp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crie sua conta"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:fontFamily="@font/montserratalternatesextrabold"
+        app:layout_constraintTop_toBottomOf="@id/RegisterLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/inputNome"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:hint="Digite seu nome"
+        android:background="@drawable/bg_campo"
+        android:textColorHint="#838383"
+        android:textColor="@android:color/white"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/registerTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/inputEmailRegister"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:hint="Digite seu e-mail"
+        android:background="@drawable/bg_campo"
+        android:textColorHint="#838383"
+        android:textColor="@android:color/white"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/inputNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/inputSenhaRegister"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:hint="Senha"
+        android:background="@drawable/bg_campo"
+        android:textColorHint="#838383"
+        android:textColor="@android:color/white"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/inputEmailRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/inputConfirmaSenha"
+        android:layout_width="230dp"
+        android:layout_height="45dp"
+        android:hint="Confirmar senha"
+        android:background="@drawable/bg_campo"
+        android:textColorHint="#838383"
+        android:textColor="@android:color/white"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/inputSenhaRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnRegistrarFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:textSize="17sp"
+        android:fontFamily="@font/montserratalternatesextrabold"
+        android:backgroundTint="#9956F6"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/inputConfirmaSenha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
