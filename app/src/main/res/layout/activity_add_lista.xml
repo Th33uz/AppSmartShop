@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161925"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtTituloAddLista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar lista"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:fontFamily="@font/montserratalternatesextrabold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/lblNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloAddLista"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/inputNomeLista"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Nome da sua lista"
+        android:background="@drawable/bg_campo"
+        android:textColor="@android:color/white"
+        android:textColorHint="#838383"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/lblNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Label imagem -->
+    <TextView
+        android:id="@+id/lblImagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imagem"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/inputNomeLista"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/containerImagem"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="#2A2B38"
+        app:layout_constraintTop_toBottomOf="@id/lblImagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imgPreviewLista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/iconeimg"
+            android:scaleType="centerInside"
+            android:contentDescription="Prévia da imagem"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSelecionarImagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconecamera"
+            app:backgroundTint="#9956F6"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="12dp"/>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnAdicionarLista"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:text="Adicionar"
+        android:textSize="17sp"
+        android:fontFamily="@font/montserratalternatesextrabold"
+        android:backgroundTint="#9956F6"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/containerImagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/HomeLogo"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:src="@drawable/iconapp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

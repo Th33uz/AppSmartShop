@@ -34,6 +34,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginLogo" />
 
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/inputEmail"
+        app:layout_constraintStart_toStartOf="@id/inputEmail"/>
+
     <EditText
         android:id="@+id/inputEmail"
         android:layout_width="230dp"
@@ -49,11 +60,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <TextView
+        android:id="@+id/lblSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/inputSenha"
+        app:layout_constraintStart_toStartOf="@id/inputSenha"/>
+
     <EditText
         android:id="@+id/inputSenha"
         android:layout_width="230dp"
         android:layout_height="45dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_campo"
         android:fontFamily="@font/montserratalternatesmedium"
         android:hint="Senha"
