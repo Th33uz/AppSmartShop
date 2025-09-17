@@ -7,15 +7,14 @@
     android:padding="12dp"
     android:background="#1E1F2A">
 
-    <!-- Ícone da categoria -->
     <ImageView
         android:id="@+id/imgCategoria"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/iconelimpeza"
         android:layout_marginEnd="12dp"/>
 
-    <!-- Nome e quantidade -->
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -39,7 +38,6 @@
             android:textSize="14sp"/>
     </LinearLayout>
 
-    <!-- Checkbox -->
     <CheckBox
         android:id="@+id/checkComprado"
         android:layout_width="wrap_content"
