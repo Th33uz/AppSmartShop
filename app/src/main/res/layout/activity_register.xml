@@ -32,6 +32,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
+    <TextView
+        android:id="@+id/lblRegNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/inputNome"
+        app:layout_constraintStart_toStartOf="@id/inputNome"/>
+
     <EditText
         android:id="@+id/inputNome"
         android:layout_width="230dp"
@@ -44,7 +55,18 @@
         app:layout_constraintTop_toBottomOf="@id/registerTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/lblRegEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/inputEmailRegister"
+        app:layout_constraintStart_toStartOf="@id/inputEmailRegister"/>
 
     <EditText
         android:id="@+id/inputEmailRegister"
@@ -58,7 +80,18 @@
         app:layout_constraintTop_toBottomOf="@id/inputNome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/lblRegSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/inputSenhaRegister"
+        app:layout_constraintStart_toStartOf="@id/inputSenhaRegister"/>
 
     <EditText
         android:id="@+id/inputSenhaRegister"
@@ -72,7 +105,18 @@
         app:layout_constraintTop_toBottomOf="@id/inputEmailRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/lblRegConfirmaSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:textColor="#BBBBBB"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@id/inputConfirmaSenha"
+        app:layout_constraintStart_toStartOf="@id/inputConfirmaSenha"/>
 
     <EditText
         android:id="@+id/inputConfirmaSenha"
@@ -86,7 +130,7 @@
         app:layout_constraintTop_toBottomOf="@id/inputSenhaRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="25dp"/>
 
     <Button
         android:id="@+id/btnRegistrarFinal"
