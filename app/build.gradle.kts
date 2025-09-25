@@ -5,6 +5,11 @@ plugins {
 
 
 android {
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     namespace = "com.example.smartshop"
     compileSdk = 36
 
