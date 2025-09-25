@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smartshop.databinding.ActivityRegisterBinding
-
+import android.util.Patterns
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
@@ -32,6 +32,10 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Digite um e-mail válido", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             if (UserSession.usuarios.any { it.email == email }) {
                 Toast.makeText(this, "Já existe um usuário com este e-mail", Toast.LENGTH_SHORT).show()
