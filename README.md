@@ -1,1 +1,2 @@
-Projeto desenvolvimento mobile
+Projeto em desenvolvimento para materia de mobile
+professor Bruno
