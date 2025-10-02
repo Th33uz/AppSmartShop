@@ -6,26 +6,35 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.recyclerview.widget.RecyclerView
+import com.example.smartshop.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
 
     private lateinit var adapter: ListaAdapter
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerListas)
+        binding.BtnLogout.setOnClickListener {
+
+            UserSession.usuarioLogado = null
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+            finish()
+        }
+
+        val recyclerView = binding.recyclerListas
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-
-
 
         adapter = ListaAdapter(emptyList())
         recyclerView.adapter = adapter
 
-        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
-        fabHome.setOnClickListener {
+        binding.fabHome.setOnClickListener() {
             val intent = Intent(this, AddListaActivity::class.java)
             startActivity(intent)
         }
