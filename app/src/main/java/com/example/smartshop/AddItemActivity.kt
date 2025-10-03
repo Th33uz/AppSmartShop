@@ -2,61 +2,51 @@ package com.example.smartshop
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.smartshop.databinding.ActivityAddItemBinding
 
 class AddItemActivity : AppCompatActivity() {
-    private lateinit var inputNomeItem: EditText
-    private lateinit var inputQuantidade: EditText
-    private lateinit var spinnerUnidade: Spinner
-    private lateinit var spinnerCategoria: Spinner
-    private lateinit var btnAdicionarItem: Button
 
+    private lateinit var binding: ActivityAddItemBinding
     private var lista: Lista? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_item)
 
-        inputNomeItem = findViewById(R.id.inputNomeItem)
-        inputQuantidade = findViewById(R.id.inputQuantidade)
-        spinnerUnidade = findViewById(R.id.spinnerUnidade)
-        spinnerCategoria = findViewById(R.id.spinnerCategoria)
-        btnAdicionarItem = findViewById(R.id.btnAdicionarItem)
+        binding = ActivityAddItemBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        // Recupera lista pelo título recebido
         val tituloLista = intent.getStringExtra("titulolista")
         lista = ListaSession.listas.find { it.titulo == tituloLista }
-
         if (lista == null) {
             Toast.makeText(this, "Lista não encontrada", Toast.LENGTH_SHORT).show()
             finish()
             return
         }
 
-
+        // Spinners
         val unidades = listOf("un", "kg", "g", "L")
-        spinnerUnidade.adapter = ArrayAdapter(
+        val categorias = listOf("Fruta", "Verdura", "Carne", "Chocolate", "Pão", "Bebida", "Limpeza", "Outros")
+
+        binding.spinnerUnidade.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             unidades
         )
-
-        val categorias = listOf("Fruta", "Verdura", "Carne", "Chocolate", "Pão", "Bebida", "Limpeza", "Outros")
-        spinnerCategoria.adapter = ArrayAdapter(
+        binding.spinnerCategoria.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             categorias
         )
 
-
-        btnAdicionarItem.setOnClickListener {
-            val nome = inputNomeItem.text.toString().trim()
-            val quantidadeTxt = inputQuantidade.text.toString().trim()
-            val unidade = spinnerUnidade.selectedItem.toString()
-            val categoria = spinnerCategoria.selectedItem.toString()
+        // Botão adicionar
+        binding.btnAdicionarItem.setOnClickListener {
+            val nome = binding.inputNomeItem.text.toString().trim()
+            val quantidadeTxt = binding.inputQuantidade.text.toString().trim()
+            val unidade = binding.spinnerUnidade.selectedItem.toString()
+            val categoria = binding.spinnerCategoria.selectedItem.toString()
 
             if (nome.isEmpty() || quantidadeTxt.isEmpty()) {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
@@ -69,7 +59,6 @@ class AddItemActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
             val novoItem = Item(
                 nome = nome,
                 quantidade = quantidade,
@@ -77,9 +66,7 @@ class AddItemActivity : AppCompatActivity() {
                 categoria = categoria
             )
 
-
             lista?.itens?.add(novoItem)
-
             Toast.makeText(this, "Item adicionado!", Toast.LENGTH_SHORT).show()
             finish()
         }
