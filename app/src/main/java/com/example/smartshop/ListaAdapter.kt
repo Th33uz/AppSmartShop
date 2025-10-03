@@ -1,6 +1,6 @@
 package com.example.smartshop
 
-import Lista
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
@@ -33,11 +33,17 @@ class ListaAdapter(private var listas: List<Lista>) :
         } else {
             holder.imgLista.setImageResource(R.drawable.iconeimg)
         }
+
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, ItensActivity::class.java)
+            intent.putExtra("titulolista", lista.titulo)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = listas.size
 
-    //função pra ordenar
     fun updateList(newList: List<Lista>) {
         listas = newList.sortedBy { it.titulo }
         notifyDataSetChanged()

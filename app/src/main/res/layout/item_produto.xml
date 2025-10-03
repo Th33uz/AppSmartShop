@@ -40,7 +40,8 @@
 
     <CheckBox
         android:id="@+id/checkComprado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@android:color/white"/>
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:backgroundTint="@color/white"
+        android:padding="4dp"/>
 </LinearLayout>

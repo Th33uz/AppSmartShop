@@ -1,6 +1,5 @@
 package com.example.smartshop
 
-import Lista
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -37,7 +36,6 @@ class AddListaActivity : AppCompatActivity() {
             startActivityForResult(intent, 100)
         }
 
-        // Botão Adicionar → cria lista
         btnAdicionarLista.setOnClickListener {
             val nomeLista = inputNomeLista.text.toString().trim()
 
