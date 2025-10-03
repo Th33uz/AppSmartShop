@@ -18,17 +18,15 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Recycler
         binding.recyclerListas.layoutManager = GridLayoutManager(this, 2)
-        adapter = ListaAdapter(emptyList())
+        adapter = ListaAdapter(mutableListOf())
         binding.recyclerListas.adapter = adapter
 
-        // FAB nova lista
         binding.fabHome.setOnClickListener {
             startActivity(Intent(this, AddListaActivity::class.java))
         }
 
-        // Logout
+
         binding.BtnLogout.setOnClickListener {
             UserSession.usuarioLogado = null
             val i = Intent(this, MainActivity::class.java)

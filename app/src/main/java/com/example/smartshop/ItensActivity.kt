@@ -10,39 +10,35 @@ class ItensActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityItensBinding
     private lateinit var adapter: ItemAdapter
-    private var lista: Lista? = null
+    private lateinit var lista: Lista
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityItensBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val tituloLista = intent.getStringExtra("titulolista")
-        lista = ListaSession.listas.find { it.titulo == tituloLista }
+        val encontrada = ListaSession.listas.find { it.titulo == tituloLista }
+        if (encontrada == null) { finish(); return }
+        lista = encontrada
 
-        if (lista == null) {
-            finish()
-            return
-        }
+        binding.txtTituloLista.text = lista.titulo
 
-        binding.txtTituloLista.text = lista!!.titulo
-
-        adapter = ItemAdapter(lista!!.itens) { item ->
-        }
+        adapter = ItemAdapter(lista.itens) {}
         binding.recyclerItens.layoutManager = LinearLayoutManager(this)
         binding.recyclerItens.adapter = adapter
 
         binding.fabAddItem.setOnClickListener {
-            val intent = Intent(this, AddItemActivity::class.java)
-            intent.putExtra("titulolista", lista!!.titulo) // passa o nome da lista
-            startActivity(intent)
+            startActivity(
+                Intent(this, AddItemActivity::class.java)
+                    .putExtra("titulolista", lista.titulo)
+            )
         }
     }
 
     override fun onResume() {
         super.onResume()
-        lista?.let {
-            adapter.updateList(it.itens)
-        }
+        adapter.updateList(lista.itens)
     }
 }
