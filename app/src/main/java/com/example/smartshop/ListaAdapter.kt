@@ -22,7 +22,6 @@ class ListaAdapter(private var listas: MutableList<Lista>) :
         val lista = listas[position]
         val b = holder.binding
 
-        // Bind básico
         b.txtNomeLista.text = lista.titulo
         if (!lista.imagemUri.isNullOrEmpty()) {
             b.imgLista.setImageURI(Uri.parse(lista.imagemUri))
@@ -30,7 +29,6 @@ class ListaAdapter(private var listas: MutableList<Lista>) :
             b.imgLista.setImageResource(R.drawable.iconeimg)
         }
 
-        // Toque normal -> abre itens da lista
         b.root.setOnClickListener {
             val ctx = b.root.context
             ctx.startActivity(
@@ -39,7 +37,6 @@ class ListaAdapter(private var listas: MutableList<Lista>) :
             )
         }
 
-        // Long-press -> Editar / Excluir
         b.root.setOnLongClickListener {
             val ctx = b.root.context
             val opcoes = arrayOf("Editar", "Excluir")
@@ -48,7 +45,6 @@ class ListaAdapter(private var listas: MutableList<Lista>) :
                 .setTitle(lista.titulo)
                 .setItems(opcoes) { _, which ->
                     when (which) {
-                        // EDITAR título
                         0 -> {
                             val input = android.widget.EditText(ctx).apply {
                                 setText(lista.titulo)
@@ -67,17 +63,13 @@ class ListaAdapter(private var listas: MutableList<Lista>) :
                                 .setNegativeButton("Cancelar", null)
                                 .show()
                         }
-                        // EXCLUIR lista (+ itens)
                         1 -> {
                             AlertDialog.Builder(ctx)
                                 .setTitle("Excluir lista")
                                 .setMessage("Excluir \"${lista.titulo}\" e todos os itens?")
                                 .setPositiveButton("Excluir") { _, _ ->
-                                    // (opcional) cascade explícito
                                     lista.itens.clear()
-                                    // remove da fonte global
                                     ListaSession.listas.remove(lista)
-                                    // remove do adapter
                                     val idx = holder.bindingAdapterPosition
                                     if (idx != RecyclerView.NO_POSITION) {
                                         listas.removeAt(idx)

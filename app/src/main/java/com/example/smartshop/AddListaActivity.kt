@@ -19,13 +19,13 @@ class AddListaActivity : AppCompatActivity() {
         binding = ActivityAddListaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Selecionar imagem
+
         binding.fabSelecionarImagem.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK).apply { type = "image/*" }
             startActivityForResult(intent, 100)
         }
 
-        // Adicionar lista
+
         binding.btnAdicionarLista.setOnClickListener {
             val nomeLista = binding.inputNomeLista.text.toString().trim()
             if (nomeLista.isEmpty()) {

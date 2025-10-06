@@ -17,7 +17,6 @@ class AddItemActivity : AppCompatActivity() {
         binding = ActivityAddItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Recupera lista pelo título recebido
         val tituloLista = intent.getStringExtra("titulolista")
         lista = ListaSession.listas.find { it.titulo == tituloLista }
         if (lista == null) {
@@ -26,7 +25,6 @@ class AddItemActivity : AppCompatActivity() {
             return
         }
 
-        // Spinners
         val unidades = listOf("un", "kg", "g", "L")
         val categorias = listOf("Fruta", "Verdura", "Carne", "Chocolate", "Pão", "Bebida", "Limpeza", "Outros")
 
@@ -41,7 +39,6 @@ class AddItemActivity : AppCompatActivity() {
             categorias
         )
 
-        // Botão adicionar
         binding.btnAdicionarItem.setOnClickListener {
             val nome = binding.inputNomeItem.text.toString().trim()
             val quantidadeTxt = binding.inputQuantidade.text.toString().trim()

@@ -40,7 +40,6 @@ class RegisterActivity : AppCompatActivity() {
             if (UserSession.usuarios.any { it.email == email }) {
                 Toast.makeText(this, "Já existe um usuário com este e-mail", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-                // lembrando esse return @setonClickListener e para sair do click e voltar para onCreate
             }
 
             val novoUsuario = User(nome, email, senha)
