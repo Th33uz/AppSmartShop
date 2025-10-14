@@ -1,6 +1,3 @@
+SmartShop — Lista de Compras (Android)
 
-Projeto em desenvolvimento para materia de mobile
-
-professor Bruno
-
-Kotlin 
+App simples de lista de compras feito em Kotlin + AndroidX, com ViewBinding, RecyclerView em grade, ordenação inteligente e ações rápidas por toque longo.
