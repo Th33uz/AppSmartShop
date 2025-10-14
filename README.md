@@ -10,4 +10,3 @@ UI: AndroidX, Material Components, ViewBinding
 
 Listas: RecyclerView + GridLayoutManager
 
-Compat: Collator (pt-BR) para ordenação A–Z com acento
